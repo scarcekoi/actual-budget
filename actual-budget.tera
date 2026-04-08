@@ -9,263 +9,60 @@ whiskers:
 ---
 {%- set accent = flavor.colors[accent] -%}
 :root {
-  /* Page Colors */
-  --color-pageBackground: {{ base.hex }};
-  --color-pageBackgroundModalActive: {{ mantle.hex }};
-  --color-pageBackgroundTopLeft: {{ base.hex }};
-  --color-pageBackgroundBottomRight: {{ mantle.hex }};
-  --color-pageBackgroundLineTop: {{ accent.hex }};
-  --color-pageBackgroundLineMid: {{ base.hex }};
-  --color-pageBackgroundLineBottom: {{ surface0.hex }};
-  --color-pageText: {{ text.hex }};
-  --color-pageTextLight: {{ subtext1.hex }};
-  --color-pageTextSubdued: {{ overlay0.hex }};
-  --color-pageTextDark: {{ text.hex }};
-  --color-pageTextPositive: {{ accent.hex }};
-  --color-pageTextLink: {{ blue.hex }};
-  --color-pageTextLinkLight: {{ lavender.hex }};
-
-  /* Card Colors */
-  --color-cardBackground: {{ mantle.hex }};
-  --color-cardBorder: {{ accent.hex }};
-  --color-cardShadow: {{ base.hex }};
-
-  /* Table Colors */
-  --color-tableBackground: {{ crust.hex }};
-  --color-tableRowBackgroundHover: {{ surface0.hex }};
-  --color-tableText: {{ text.hex }};
-  --color-tableTextLight: {{ text.hex }};
-  --color-tableTextSubdued: {{ overlay0.hex }};
-  --color-tableTextSelected: {{ text.hex }};
-  --color-tableTextHover: {{ subtext1.hex }};
-  --color-tableTextInactive: {{ overlay0.hex }};
-  --color-tableHeaderText: {{ subtext0.hex }};
-  --color-tableHeaderBackground: {{ mantle.hex }};
-  --color-tableBorder: {{ surface0.hex }};
-  --color-tableBorderSelected: {{ accent.hex }};
-  --color-tableBorderHover: {{ lavender.hex }};
-  --color-tableBorderSeparator: {{ surface0.hex }};
-  --color-tableRowBackgroundHighlight: {{ surface0.hex }};
-  --color-tableRowBackgroundHighlightText: {{ text.hex }};
-  --color-tableRowHeaderBackground: {{ mantle.hex }};
-  --color-tableRowHeaderText: {{ text.hex }};
-
-  /* Sidebar Colors */
-  --color-sidebarBackground: {{ crust.hex }};
-  --color-sidebarItemBackgroundPending: {{ peach.hex }};
-  --color-sidebarItemBackgroundPositive: {{ green.hex }};
-  --color-sidebarItemBackgroundFailed: {{ red.hex }};
-  --color-sidebarItemAccentSelected: {{ accent.hex }};
-  --color-sidebarItemBackgroundHover: {{ mantle.hex }};
-  --color-sidebarItemText: {{ text.hex }};
-  --color-sidebarItemTextSelected: {{ accent.hex }};
-  --color-sidebarBudgetName: {{ subtext0.hex }};
-  --color-sidebarBorder: {{ surface0.hex }};
-
-  /* Menu Colors */
-  --color-menuBackground: {{ mantle.hex }};
-  --color-menuItemBackground: {{ mantle.hex }};
-  --color-menuItemBackgroundHover: {{ surface0.hex }};
-  --color-menuItemText: {{ text.hex }};
-  --color-menuItemTextHover: {{ text.hex }};
-  --color-menuItemTextSelected: {{ accent.hex }};
-  --color-menuItemTextHeader: {{ blue.hex }};
-  --color-menuBorder: {{ surface0.hex }};
-  --color-menuBorderHover: {{ accent.hex }};
-  --color-menuKeybindingText: {{ subtext0.hex }};
-  --color-menuAutoCompleteBackground: {{ base.hex }};
-  --color-menuAutoCompleteBackgroundHover: {{ surface0.hex }};
-  --color-menuAutoCompleteText: {{ text.hex }};
-  --color-menuAutoCompleteTextHeader: {{ blue.hex }};
-  --color-menuAutoCompleteItemText: {{ text.hex }};
-
-  /* Modal Colors */
-  --color-modalBackground: {{ mantle.hex }};
-  --color-modalBorder: {{ surface0.hex }};
-
-  /* Mobile Colors */
-  --color-mobileHeaderBackground: {{ base.hex }};
-  --color-mobileHeaderText: {{ text.hex }};
-  --color-mobileHeaderTextSubdued: {{ subtext0.hex }};
-  --color-mobileHeaderTextHover: {{ css_rgba(color=text | mod(opacity=0.15)) }};
-  --color-mobilePageBackground: {{ base.hex }};
-  --color-mobileNavBackground: {{ mantle.hex }};
-  --color-mobileNavItem: {{ text.hex }};
-  --color-mobileNavItemSelected: {{ accent.hex }};
-  --color-mobileAccountShadow: {{ base.hex }};
-  --color-mobileAccountText: {{ blue.hex }};
-  --color-mobileTransactionSelected: {{ accent.hex }};
-  --color-mobileViewTheme: {{ base.hex }};
-  --color-mobileConfigServerViewTheme: {{ accent.hex }};
-
-  /* Markdown Colors */
-  --color-markdownNormal: {{ surface1.hex }};
-  --color-markdownDark: {{ surface0.hex }};
-  --color-markdownLight: {{ surface2.hex }};
-
-  /* Button Menu Colors */
-  --color-buttonMenuText: {{ text.hex }};
-  --color-buttonMenuTextHover: {{ text.hex }};
-  --color-buttonMenuBackground: transparent;
-  --color-buttonMenuBackgroundHover: {{ css_rgba(color=text | mod(opacity=0.1)) }};
-  --color-buttonMenuBorder: {{ surface0.hex }};
-  --color-buttonMenuSelectedText: {{ base.hex }};
-  --color-buttonMenuSelectedTextHover: {{ base.hex }};
-  --color-buttonMenuSelectedBackground: {{ peach.hex }};
-  --color-buttonMenuSelectedBackgroundHover: {{ yellow.hex }};
-  --color-buttonMenuSelectedBorder: {{ peach.hex }};
-
-  /* Button Primary Colors */
-  --color-buttonPrimaryText: {{ base.hex }};
-  --color-buttonPrimaryTextHover: {{ base.hex }};
-  --color-buttonPrimaryBackground: {{ accent.hex }};
-  --color-buttonPrimaryBackgroundHover: {{ lavender.hex }};
-  --color-buttonPrimaryBorder: {{ accent.hex }};
-  --color-buttonPrimaryShadow: {{ css_rgba(color=crust | mod(opacity=0.4)) }};
-  --color-buttonPrimaryDisabledText: {{ overlay0.hex }};
-  --color-buttonPrimaryDisabledBackground: {{ surface0.hex }};
-  --color-buttonPrimaryDisabledBorder: {{ surface0.hex }};
-
-  /* Button Normal Colors */
-  --color-buttonNormalText: {{ text.hex }};
-  --color-buttonNormalTextHover: {{ text.hex }};
-  --color-buttonNormalBackground: {{ base.hex }};
-  --color-buttonNormalBackgroundHover: {{ surface0.hex }};
-  --color-buttonNormalBorder: {{ surface0.hex }};
-  --color-buttonNormalShadow: {{ css_rgba(color=crust | mod(opacity=0.3)) }};
-  --color-buttonNormalSelectedText: {{ base.hex }};
-  --color-buttonNormalSelectedBackground: {{ accent.hex }};
-  --color-buttonNormalDisabledText: {{ overlay0.hex }};
-  --color-buttonNormalDisabledBackground: {{ base.hex }};
-  --color-buttonNormalDisabledBorder: {{ surface0.hex }};
-
-  /* Button Bare Colors */
-  --color-buttonBareText: {{ text.hex }};
-  --color-buttonBareTextHover: {{ text.hex }};
-  --color-buttonBareBackground: transparent;
-  --color-buttonBareBackgroundHover: {{ css_rgba(color=text | mod(opacity=0.1)) }};
-  --color-buttonBareBackgroundActive: {{ css_rgba(color=text | mod(opacity=0.2)) }};
-  --color-buttonBareDisabledText: {{ overlay0.hex }};
-  --color-buttonBareDisabledBackground: transparent;
-
-  /* Calendar Colors */
-  --color-calendarText: {{ text.hex }};
-  --color-calendarBackground: {{ mantle.hex }};
-  --color-calendarItemText: {{ text.hex }};
-  --color-calendarItemBackground: {{ surface0.hex }};
-  --color-calendarSelectedBackground: {{ accent.hex }};
-  --color-calendarCellBackground: {{ base.hex }};
-
-  /* Notice/Warning/Error Colors */
-  --color-noticeBackground: {{ css_rgba(color=green | mod(opacity=0.15)) }};
-  --color-noticeBackgroundLight: {{ css_rgba(color=green | mod(opacity=0.1)) }};
-  --color-noticeBackgroundDark: {{ css_rgba(color=green | mod(opacity=0.2)) }};
-  --color-noticeText: {{ green.hex }};
-  --color-noticeTextLight: {{ green.hex }};
-  --color-noticeTextDark: {{ green.hex }};
-  --color-noticeTextMenu: {{ green.hex }};
-  --color-noticeBorder: {{ green.hex }};
-
-  --color-warningBackground: {{ css_rgba(color=peach | mod(opacity=0.15)) }};
-  --color-warningText: {{ peach.hex }};
-  --color-warningTextLight: {{ peach.hex }};
-  --color-warningTextDark: {{ peach.hex }};
-  --color-warningBorder: {{ peach.hex }};
-
-  --color-errorBackground: {{ css_rgba(color=red | mod(opacity=0.15)) }};
-  --color-errorText: {{ red.hex }};
-  --color-errorTextDark: {{ red.hex }};
-  --color-errorTextDarker: {{ red.hex }};
-  --color-errorTextMenu: {{ red.hex }};
-  --color-errorBorder: {{ red.hex }};
-
-  --color-upcomingBackground: {{ css_rgba(color=accent | mod(opacity=0.15)) }};
-  --color-upcomingText: {{ accent.hex }};
-  --color-upcomingBorder: {{ surface0.hex }};
-
-  /* Form Colors */
-  --color-formLabelText: {{ subtext0.hex }};
-  --color-formLabelBackground: {{ mantle.hex }};
-  --color-formInputBackground: {{ base.hex }};
-  --color-formInputBackgroundSelected: {{ surface0.hex }};
-  --color-formInputBackgroundSelection: {{ accent.hex }};
-  --color-formInputBorder: {{ surface0.hex }};
-  --color-formInputTextReadOnlySelection: {{ surface0.hex }};
-  --color-formInputBorderSelected: {{ accent.hex }};
-  --color-formInputText: {{ text.hex }};
-  --color-formInputTextSelected: {{ base.hex }};
-  --color-formInputTextPlaceholder: {{ overlay0.hex }};
-  --color-formInputTextPlaceholderSelected: {{ subtext0.hex }};
-  --color-formInputTextSelection: {{ surface0.hex }};
-  --color-formInputShadowSelected: {{ accent.hex }};
-  --color-formInputTextHighlight: {{ blue.hex }};
-
-  /* Checkbox Colors */
-  --color-checkboxText: {{ base.hex }};
-  --color-checkboxBackgroundSelected: {{ accent.hex }};
-  --color-checkboxBorderSelected: {{ accent.hex }};
-  --color-checkboxShadowSelected: {{ lavender.hex }};
-  --color-checkboxToggleBackground: {{ surface1.hex }};
-  --color-checkboxToggleBackgroundSelected: {{ accent.hex }};
-  --color-checkboxToggleDisabled: {{ surface0.hex }};
-
-  /* Pill Colors */
-  --color-pillBackground: {{ mantle.hex }};
-  --color-pillBackgroundLight: {{ base.hex }};
-  --color-pillText: {{ text.hex }};
-  --color-pillTextHighlighted: {{ accent.hex }};
-  --color-pillBorder: {{ surface0.hex }};
-  --color-pillBorderDark: {{ surface0.hex }};
-  --color-pillBackgroundSelected: {{ accent.hex }};
-  --color-pillTextSelected: {{ base.hex }};
-  --color-pillBorderSelected: {{ accent.hex }};
-  --color-pillTextSubdued: {{ overlay0.hex }};
-
-  /* Report Colors */
-  --color-reportsRed: {{ red.hex }};
-  --color-reportsBlue: {{ blue.hex }};
-  --color-reportsGreen: {{ green.hex }};
-  --color-reportsGray: {{ overlay0.hex }};
-  --color-reportsLabel: {{ text.hex }};
-  --color-reportsInnerLabel: {{ base.hex }};
-  --color-reportsNumberNegative: {{ red.hex }};
-  --color-reportsNumberNeutral: {{ subtext0.hex }};
-  --color-reportsNumberPositive: {{ green.hex }};
-
-  /* Note Tag Colors */
-  --color-noteTagBackground: {{ css_rgba(color=accent | mod(opacity=0.2)) }};
-  --color-noteTagBackgroundHover: {{ css_rgba(color=accent | mod(opacity=0.3)) }};
-  --color-noteTagDefault: {{ accent.hex }};
-  --color-noteTagText: {{ accent.hex }};
-
-  /* Budget Colors */
-  --color-budgetOtherMonth: {{ mantle.hex }};
   --color-budgetCurrentMonth: {{ base.hex }};
-  --color-budgetHeaderOtherMonth: {{ crust.hex }};
   --color-budgetHeaderCurrentMonth: {{ mantle.hex }};
+  --color-budgetHeaderOtherMonth: {{ crust.hex }};
   --color-budgetNumberNegative: {{ red.hex }};
   --color-budgetNumberNeutral: {{ text.hex }};
   --color-budgetNumberPositive: {{ green.hex }};
   --color-budgetNumberZero: {{ text.hex }};
-
-  /* Floating Action Bar */
-  --color-floatingActionBarBackground: {{ mantle.hex }};
-  --color-floatingActionBarBorder: {{ accent.hex }};
-  --color-floatingActionBarText: {{ text.hex }};
-
-  /* Tooltip Colors */
-  --color-tooltipText: {{ text.hex }};
-  --color-tooltipBackground: {{ surface0.hex }};
-  --color-tooltipBorder: {{ surface0.hex }};
-
-  /* Overlay */
-  --color-overlayBackground: {{ css_rgba(color=crust | mod(opacity=0.7))}};
-
-  /* Other */
-  --color-numberPositive: {{ green.hex }};
-  --color-numberNegative: {{ red.hex }};
-  --color-numberNeutral: {{ subtext0.hex }};
-
+  --color-budgetOtherMonth: {{ mantle.hex }};
+  --color-buttonBareBackground: transparent;
+  --color-buttonBareBackgroundActive: {{ css_rgba(color=text | mod(opacity=0.2)) }};
+  --color-buttonBareBackgroundHover: {{ css_rgba(color=text | mod(opacity=0.1)) }};
+  --color-buttonBareDisabledBackground: transparent;
+  --color-buttonBareDisabledText: {{ overlay0.hex }};
+  --color-buttonBareText: {{ text.hex }};
+  --color-buttonBareTextHover: {{ text.hex }};
+  --color-buttonMenuBackground: transparent;
+  --color-buttonMenuBackgroundHover: {{ css_rgba(color=text | mod(opacity=0.1)) }};
+  --color-buttonMenuBorder: {{ surface0.hex }};
+  --color-buttonMenuSelectedBackground: {{ peach.hex }};
+  --color-buttonMenuSelectedBackgroundHover: {{ yellow.hex }};
+  --color-buttonMenuSelectedBorder: {{ peach.hex }};
+  --color-buttonMenuSelectedText: {{ base.hex }};
+  --color-buttonMenuSelectedTextHover: {{ base.hex }};
+  --color-buttonMenuText: {{ text.hex }};
+  --color-buttonMenuTextHover: {{ text.hex }};
+  --color-buttonNormalBackground: {{ base.hex }};
+  --color-buttonNormalBackgroundHover: {{ surface0.hex }};
+  --color-buttonNormalBorder: {{ surface0.hex }};
+  --color-buttonNormalDisabledBackground: {{ base.hex }};
+  --color-buttonNormalDisabledBorder: {{ surface0.hex }};
+  --color-buttonNormalDisabledText: {{ overlay0.hex }};
+  --color-buttonNormalSelectedBackground: {{ accent.hex }};
+  --color-buttonNormalSelectedText: {{ base.hex }};
+  --color-buttonNormalShadow: {{ css_rgba(color=crust | mod(opacity=0.3)) }};
+  --color-buttonNormalText: {{ text.hex }};
+  --color-buttonNormalTextHover: {{ text.hex }};
+  --color-buttonPrimaryBackground: {{ accent.hex }};
+  --color-buttonPrimaryBackgroundHover: {{ lavender.hex }};
+  --color-buttonPrimaryBorder: {{ accent.hex }};
+  --color-buttonPrimaryDisabledBackground: {{ surface0.hex }};
+  --color-buttonPrimaryDisabledBorder: {{ surface0.hex }};
+  --color-buttonPrimaryDisabledText: {{ overlay0.hex }};
+  --color-buttonPrimaryShadow: {{ css_rgba(color=crust | mod(opacity=0.4)) }};
+  --color-buttonPrimaryText: {{ base.hex }};
+  --color-buttonPrimaryTextHover: {{ base.hex }};
+  --color-calendarBackground: {{ mantle.hex }};
+  --color-calendarCellBackground: {{ base.hex }};
+  --color-calendarItemBackground: {{ surface0.hex }};
+  --color-calendarItemText: {{ text.hex }};
+  --color-calendarSelectedBackground: {{ accent.hex }};
+  --color-calendarText: {{ text.hex }};
+  --color-cardBackground: {{ mantle.hex }};
+  --color-cardBorder: {{ accent.hex }};
+  --color-cardShadow: {{ base.hex }};
   --color-chartQual1: {{ green.hex }};
   --color-chartQual2: {{ yellow.hex }};
   --color-chartQual3: {{ peach.hex }};
@@ -275,12 +72,161 @@ whiskers:
   --color-chartQual7: {{ teal.hex }};
   --color-chartQual8: {{ rosewater.hex }};
   --color-chartQual9: {{ maroon.hex }};
-
+  --color-checkboxBackgroundSelected: {{ accent.hex }};
+  --color-checkboxBorderSelected: {{ accent.hex }};
+  --color-checkboxShadowSelected: {{ lavender.hex }};
+  --color-checkboxText: {{ base.hex }};
+  --color-checkboxToggleBackground: {{ surface1.hex }};
+  --color-checkboxToggleBackgroundSelected: {{ accent.hex }};
+  --color-checkboxToggleDisabled: {{ surface0.hex }};
+  --color-errorBackground: {{ css_rgba(color=red | mod(opacity=0.15)) }};
+  --color-errorBorder: {{ red.hex }};
+  --color-errorText: {{ red.hex }};
+  --color-errorTextDark: {{ red.hex }};
+  --color-errorTextDarker: {{ red.hex }};
+  --color-errorTextMenu: {{ red.hex }};
+  --color-floatingActionBarBackground: {{ mantle.hex }};
+  --color-floatingActionBarBorder: {{ accent.hex }};
+  --color-floatingActionBarText: {{ text.hex }};
+  --color-formInputBackground: {{ base.hex }};
+  --color-formInputBackgroundSelected: {{ surface0.hex }};
+  --color-formInputBackgroundSelection: {{ accent.hex }};
+  --color-formInputBorder: {{ surface0.hex }};
+  --color-formInputBorderSelected: {{ accent.hex }};
+  --color-formInputShadowSelected: {{ accent.hex }};
+  --color-formInputText: {{ text.hex }};
+  --color-formInputTextHighlight: {{ blue.hex }};
+  --color-formInputTextPlaceholder: {{ overlay0.hex }};
+  --color-formInputTextPlaceholderSelected: {{ subtext0.hex }};
+  --color-formInputTextReadOnlySelection: {{ surface0.hex }};
+  --color-formInputTextSelected: {{ base.hex }};
+  --color-formInputTextSelection: {{ surface0.hex }};
+  --color-formLabelBackground: {{ mantle.hex }};
+  --color-formLabelText: {{ subtext0.hex }};
+  --color-markdownDark: {{ surface0.hex }};
+  --color-markdownLight: {{ surface2.hex }};
+  --color-markdownNormal: {{ surface1.hex }};
+  --color-menuAutoCompleteBackground: {{ base.hex }};
+  --color-menuAutoCompleteBackgroundHover: {{ surface0.hex }};
+  --color-menuAutoCompleteItemText: {{ text.hex }};
+  --color-menuAutoCompleteText: {{ text.hex }};
+  --color-menuAutoCompleteTextHeader: {{ blue.hex }};
+  --color-menuBackground: {{ mantle.hex }};
+  --color-menuBorder: {{ surface0.hex }};
+  --color-menuBorderHover: {{ accent.hex }};
+  --color-menuItemBackground: {{ mantle.hex }};
+  --color-menuItemBackgroundHover: {{ surface0.hex }};
+  --color-menuItemText: {{ text.hex }};
+  --color-menuItemTextHeader: {{ blue.hex }};
+  --color-menuItemTextHover: {{ text.hex }};
+  --color-menuItemTextSelected: {{ accent.hex }};
+  --color-menuKeybindingText: {{ subtext0.hex }};
+  --color-mobileAccountShadow: {{ base.hex }};
+  --color-mobileAccountText: {{ blue.hex }};
+  --color-mobileConfigServerViewTheme: {{ accent.hex }};
+  --color-mobileHeaderBackground: {{ base.hex }};
+  --color-mobileHeaderText: {{ text.hex }};
+  --color-mobileHeaderTextHover: {{ css_rgba(color=text | mod(opacity=0.15)) }};
+  --color-mobileHeaderTextSubdued: {{ subtext0.hex }};
+  --color-mobileNavBackground: {{ mantle.hex }};
+  --color-mobileNavItem: {{ text.hex }};
+  --color-mobileNavItemSelected: {{ accent.hex }};
+  --color-mobilePageBackground: {{ base.hex }};
+  --color-mobileTransactionSelected: {{ accent.hex }};
+  --color-mobileViewTheme: {{ base.hex }};
+  --color-modalBackground: {{ mantle.hex }};
+  --color-modalBorder: {{ surface0.hex }};
+  --color-noteTagBackground: {{ css_rgba(color=accent | mod(opacity=0.2)) }};
+  --color-noteTagBackgroundHover: {{ css_rgba(color=accent | mod(opacity=0.3)) }};
+  --color-noteTagDefault: {{ accent.hex }};
+  --color-noteTagText: {{ accent.hex }};
+  --color-noticeBackground: {{ css_rgba(color=green | mod(opacity=0.15)) }};
+  --color-noticeBackgroundDark: {{ css_rgba(color=green | mod(opacity=0.2)) }};
+  --color-noticeBackgroundLight: {{ css_rgba(color=green | mod(opacity=0.1)) }};
+  --color-noticeBorder: {{ green.hex }};
+  --color-noticeText: {{ green.hex }};
+  --color-noticeTextDark: {{ green.hex }};
+  --color-noticeTextLight: {{ green.hex }};
+  --color-noticeTextMenu: {{ green.hex }};
+  --color-numberNegative: {{ red.hex }};
+  --color-numberNeutral: {{ subtext0.hex }};
+  --color-numberPositive: {{ green.hex }};
+  --color-overlayBackground: {{ css_rgba(color=crust | mod(opacity=0.7))}};
+  --color-pageBackground: {{ base.hex }};
+  --color-pageBackgroundBottomRight: {{ mantle.hex }};
+  --color-pageBackgroundLineBottom: {{ surface0.hex }};
+  --color-pageBackgroundLineMid: {{ base.hex }};
+  --color-pageBackgroundLineTop: {{ accent.hex }};
+  --color-pageBackgroundModalActive: {{ mantle.hex }};
+  --color-pageBackgroundTopLeft: {{ base.hex }};
+  --color-pageText: {{ text.hex }};
+  --color-pageTextDark: {{ text.hex }};
+  --color-pageTextLight: {{ subtext1.hex }};
+  --color-pageTextLink: {{ blue.hex }};
+  --color-pageTextLinkLight: {{ lavender.hex }};
+  --color-pageTextPositive: {{ accent.hex }};
+  --color-pageTextSubdued: {{ overlay0.hex }};
+  --color-pillBackground: {{ mantle.hex }};
+  --color-pillBackgroundLight: {{ base.hex }};
+  --color-pillBackgroundSelected: {{ accent.hex }};
+  --color-pillBorder: {{ surface0.hex }};
+  --color-pillBorderDark: {{ surface0.hex }};
+  --color-pillBorderSelected: {{ accent.hex }};
+  --color-pillText: {{ text.hex }};
+  --color-pillTextHighlighted: {{ accent.hex }};
+  --color-pillTextSelected: {{ base.hex }};
+  --color-pillTextSubdued: {{ overlay0.hex }};
+  --color-reportsBlue: {{ blue.hex }};
   --color-reportsChartFill: {{ green.hex }};
-
+  --color-reportsGray: {{ overlay0.hex }};
+  --color-reportsGreen: {{ green.hex }};
+  --color-reportsInnerLabel: {{ base.hex }};
+  --color-reportsLabel: {{ text.hex }};
+  --color-reportsNumberNegative: {{ red.hex }};
+  --color-reportsNumberNeutral: {{ subtext0.hex }};
+  --color-reportsNumberPositive: {{ green.hex }};
+  --color-reportsRed: {{ red.hex }};
+  --color-sidebarBackground: {{ crust.hex }};
+  --color-sidebarBudgetName: {{ subtext0.hex }};
+  --color-sidebarItemAccentSelected: {{ accent.hex }};
+  --color-sidebarItemBackgroundFailed: {{ red.hex }};
+  --color-sidebarItemBackgroundHover: {{ mantle.hex }};
+  --color-sidebarItemBackgroundPending: {{ peach.hex }};
+  --color-sidebarItemBackgroundPositive: {{ green.hex }};
+  --color-sidebarItemText: {{ text.hex }};
+  --color-sidebarItemTextSelected: {{ accent.hex }};
+  --color-tableBackground: {{ crust.hex }};
+  --color-tableBorder: {{ surface0.hex }};
+  --color-tableBorderHover: {{ lavender.hex }};
+  --color-tableBorderSelected: {{ accent.hex }};
+  --color-tableBorderSeparator: {{ surface0.hex }};
+  --color-tableHeaderBackground: {{ mantle.hex }};
+  --color-tableHeaderText: {{ subtext0.hex }};
+  --color-tableRowBackgroundHighlight: {{ surface0.hex }};
+  --color-tableRowBackgroundHighlightText: {{ text.hex }};
+  --color-tableRowBackgroundHover: {{ surface0.hex }};
+  --color-tableRowHeaderBackground: {{ mantle.hex }};
+  --color-tableRowHeaderText: {{ text.hex }};
+  --color-tableText: {{ text.hex }};
+  --color-tableTextHover: {{ subtext1.hex }};
+  --color-tableTextInactive: {{ overlay0.hex }};
+  --color-tableTextLight: {{ text.hex }};
+  --color-tableTextSelected: {{ text.hex }};
+  --color-tableTextSubdued: {{ overlay0.hex }};
   --color-templateNumberFunded: {{ green.hex }};
   --color-templateNumberUnderFunded: {{ yellow.hex }};
   --color-toBudgetNegative: {{ red.hex }};
   --color-toBudgetPositive: {{ green.hex }};
   --color-toBudgetZero: {{ green.hex }};
+  --color-tooltipBackground: {{ surface0.hex }};
+  --color-tooltipBorder: {{ surface0.hex }};
+  --color-tooltipText: {{ text.hex }};
+  --color-upcomingBackground: {{ css_rgba(color=accent | mod(opacity=0.15)) }};
+  --color-upcomingBorder: {{ surface0.hex }};
+  --color-upcomingText: {{ accent.hex }};
+  --color-warningBackground: {{ css_rgba(color=peach | mod(opacity=0.15)) }};
+  --color-warningBorder: {{ peach.hex }};
+  --color-warningText: {{ peach.hex }};
+  --color-warningTextDark: {{ peach.hex }};
+  --color-warningTextLight: {{ peach.hex }};
 }
