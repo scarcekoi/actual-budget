@@ -56,7 +56,7 @@ whiskers:
   --color-buttonPrimaryTextHover: {{ base.hex }};
   --color-calendarBackground: {{ mantle.hex }};
   --color-calendarCellBackground: {{ base.hex }};
-  --color-calendarItemBackground: {{ surface0.hex }};
+  --color-calendarItemBackground: {{ base.hex }};
   --color-calendarItemText: {{ text.hex }};
   --color-calendarSelectedBackground: {{ accent.hex }};
   --color-calendarText: {{ text.hex }};
